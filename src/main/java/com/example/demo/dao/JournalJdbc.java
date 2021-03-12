@@ -41,7 +41,7 @@ public class JournalJdbc {
 
     // Вывод записи журнала
     public Journal getJournal(int id) {
-        return jdbcTemplate.queryForObject("SELECT student.name, student.surname,  FROM journal WHERE id = ?", this::mapJournal, id);
+        return jdbcTemplate.queryForObject("SELECT student.name, student.surname FROM journal WHERE id = ?", this::mapJournal, id);
     }
 
 
