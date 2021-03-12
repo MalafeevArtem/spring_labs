@@ -106,3 +106,5 @@ INSERT INTO study_group VALUES (5, 'ИКБО-07-17');
 
 INSERT INTO student_local VALUES (51, 'Артем', 'Малафеев', 'Евгеньевич', 4);
 INSERT INTO student_local VALUES (52, 'Александр', 'Извеков', 'Вадимович', 5);
+INSERT INTO student_local VALUES (53, 'fff', 'fff', 'fff', 5);
+INSERT INTO student_local VALUES (54, 'aaa', 'aaa', 'aaa', 5);
