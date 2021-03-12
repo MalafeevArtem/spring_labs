@@ -34,10 +34,10 @@ public class StudentJdbc {
         return jdbcTemplate.query("SELECT * FROM student", this::mapStudent);
     }
 
-//    // Вывод всех студентов
-//    public List<Student> getAllLocal() {
-//        return jdbcTemplate.query("SELECT * FROM student_local", this::mapStudent);
-//    }
+    // Вывод всех студентов
+    public List<Student> getAllLocal() {
+        return jdbcTemplate.query("SELECT * FROM student_local", this::mapStudent);
+    }
 
 
     // Вывод всех студентов определенной группы

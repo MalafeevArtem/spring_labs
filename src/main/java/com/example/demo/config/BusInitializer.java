@@ -21,10 +21,10 @@ public class BusInitializer {
         this.studentJdbc = studentJdbc;
     }
 
-//    @PostConstruct
-//    public void init() throws IOException {
-//        initEntity("student", studentJdbc.getAllLocal());
-//    }
+    @PostConstruct
+    public void init() throws IOException {
+        initEntity("student", studentJdbc.getAllLocal());
+    }
 
     private <T> void initEntity(String name, List<T> data) throws IOException {
         replicator.initializeEntity(name);
