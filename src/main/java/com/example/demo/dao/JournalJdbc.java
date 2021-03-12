@@ -47,7 +47,18 @@ public class JournalJdbc {
 
     // Вывод всех записей журнала
     public List<Journal> getAllJournal() {
-        return jdbcTemplate.query("SELECT * FROM journal", this::mapJournal);
+        return jdbcTemplate.query("SELECT journal.id, student_id, study_plan_id, in_time, count, mark_id," +
+                        "student.surname AS student_surname, student.name AS student_name, student.second_name AS student_second_name," +
+                        "subject.name AS subject_name, exam_type.type AS exam_type, mark.name AS mark_name," +
+                        "mark.value AS mark_value " +
+                        "FROM journal " +
+                        "INNER JOIN student ON journal.student_id = student.id " +
+                        "INNER JOIN study_plan ON journal.study_plan_id = study_plan.id " +
+                        "INNER JOIN subject ON study_plan.subject_id = subject.id " +
+                        "INNER JOIN exam_type ON study_plan.exam_type_id = exam_type.id " +
+                        "INNER JOIN mark ON journal.mark_id = mark.id",
+                this::mapJournal
+        );
     }
 
 
